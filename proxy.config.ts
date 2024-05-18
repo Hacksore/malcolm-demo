@@ -27,7 +27,6 @@ export default defineConfig({
     ctx
   ) => {
 
-    // console.log(ctx.requestURL)
     if (!res.headers["content-type"]?.startsWith("text/html")) {
       return;
     }
@@ -35,7 +34,7 @@ export default defineConfig({
     const $ = load(res.body.buffer.toString('utf-8'));
 
     console.log($.html())
-    const ele = $("#header");
+    const ele = $("body");
 
     console.log("ele", ele.html());
 
