@@ -34,10 +34,12 @@ export default defineConfig({
     const $ = load(res.body.buffer.toString('utf-8'));
 
     console.log($.html())
-    const ele = $("body");
+    const ele = $("#header");
 
-    console.log("ele", ele.html());
+    ele.text("ayo lmao git hacked")
 
-    return;
+    return {
+      body: $.html()
+    }
   },
 });
